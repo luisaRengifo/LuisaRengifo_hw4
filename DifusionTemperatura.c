@@ -7,7 +7,7 @@ void datos(FILE *out, float T[100][100]);
 float mean_t(float T[100][100]);
 void FijasCaso1(float v, float alpha, float T[100][100]);
 void FijasCaso2(float v, float alpha, float T[100][100]);
-
+//solo realice el analisis con condiciones de frontera fijas pues no entendi bien el funcionamiento de las otras dos
 int main()
 {
 	float v = 0.1; //no se pudo dejar el dado en el enunciado pues no se observan grandes cambios
