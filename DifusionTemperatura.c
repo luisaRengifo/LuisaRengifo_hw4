@@ -5,8 +5,8 @@
 void inicializar(float t_rectangulo, float t_placa, float T[100][100]);
 void datos(FILE *out, float T[100][100]);
 float mean_t(float T[100][100]);
-void FijasCaso1(float nu, float alpha, float T[100][100]);
-void FijasCaso2(float nu, float alpha, float T[100][100]);
+void FijasCaso1(float v, float alpha, float T[100][100]);
+void FijasCaso2(float v, float alpha, float T[100][100]);
 
 int main()
 {
@@ -146,7 +146,7 @@ float mean_t(float T[100][100])
 	
 }
 
-void FijasCaso1(float nu, float alpha, float T[100][100])
+void FijasCaso1(float v, float alpha, float T[100][100])
 {	
 	int i,j;
 
@@ -163,14 +163,14 @@ void FijasCaso1(float nu, float alpha, float T[100][100])
 	{
 		for(j=1; j<99; j++)
 		{
-			T[i][j]= nu*alpha*(T_past[i+1][j]+T_past[i-1][j]+T_past[i][j+1]+T_past[i][j-1]-4*T_past[i][j])+T_past[i][j];
+			T[i][j]= v*alpha*(T_past[i+1][j]+T_past[i-1][j]+T_past[i][j+1]+T_past[i][j-1]-4*T_past[i][j])+T_past[i][j];
 		}
 		
 	}
 
 }
 
-void FijasCaso2(float nu, float alpha, float T[100][100])
+void FijasCaso2(float v, float alpha, float T[100][100])
 {
 	
 	int i,j;                                        
@@ -189,7 +189,7 @@ void FijasCaso2(float nu, float alpha, float T[100][100])
        		{
 			if(!(i>=20 && i<40 && j>=45 && j<55))
 			{
-	    			T[i][j]= nu*alpha*(T_past[i+1][j]+T_past[i-1][j]+T_past[i][j+1]+T_past[i][j-1]-4*T_past[i][j])+T_past[i][j];
+	    			T[i][j]= v*alpha*(T_past[i+1][j]+T_past[i-1][j]+T_past[i][j+1]+T_past[i][j-1]-4*T_past[i][j])+T_past[i][j];
 			}
 		}
 	}
